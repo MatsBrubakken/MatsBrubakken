@@ -42,3 +42,27 @@
     emphstyle={\color{codeblue}},
     emph={True, False, None, and, or, not, in, is, if, elif, else, for, while, break, continue, else, def, class, with, as, pass, lambda, return, yield, import, from, try, except, raise, finally, assert, async, await, del, global, nonlocal}
 }
+\begin{lstlisting}[style=Python,caption={}, label={lst:flaskroute}]
+<div class="wrapper">
+    {% for post in posts.items %}
+    <a href="{{ url_for('event', event_id=post.id) }}">
+        <div class="card">
+
+            <div class="card__pic">
+                <img class="thumbnail-pics" src="{{ url_for('static', filename='pictures/' + post.thumbnail) }}" alt="" />
+            </div>
+
+            <h2 class="card__title">{{post.title}}</h2>
+            <h2 class="event_date">{{post.event_date.strftime('%d-%m-%Y')}}</h2>
+            <div class="lorteknap">
+                <p class="card__desc">LÆS MERE</p>
+            </div>
+
+
+        </div>
+    </a>
+
+
+    {% endfor %}
+</div>
+\end{lstlisting}
